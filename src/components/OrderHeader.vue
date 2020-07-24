@@ -1,13 +1,14 @@
 <template>
   <div>
-    detail
+    orderHeader
   </div>
 </template>
 
 <script>
 export default {
-  name: 'detail',
+  name: 'order-header',
   components: {
+    
 },
   data() {
     return {
