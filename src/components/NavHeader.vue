@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+    NavHeader
   </div>
 </template>
 
