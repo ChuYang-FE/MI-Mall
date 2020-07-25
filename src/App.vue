@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import storage from './storage/index'
 export default {
   name: 'app',
   components: {
@@ -16,7 +17,11 @@ export default {
     }
   },
   mounted(){
-    
+    // storage.setItem('age', '23','user');
+    storage.setItem('friend', {'f1': 'nope'});
+    storage.clear('friend');
+    storage.clear('fri');
+    storage.clear('age');
   },
   methods:{
     
