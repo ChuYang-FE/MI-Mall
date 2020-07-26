@@ -59,6 +59,10 @@ export default {
       a{
         color:#999999;
         display:inline-block;
+        &:hover{
+          color:#FF6600;
+          text-decoration-line: underline;
+        }
       }
       span{
         margin:0 10px;
