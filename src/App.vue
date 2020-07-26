@@ -16,15 +16,7 @@ export default {
     }
   },
   mounted(){
-    //本地加载请求静态JSON文件的形式
-    // this.axios.get('/mock/user/login.json').then((res) => {
-    //   this.res = res;
-    // })
 
-    //mockjs
-    this.axios.get('/user/login').then((res) => {
-      this.res = res;
-    })
   },
   methods:{
     

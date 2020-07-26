@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueLazyLoad from 'vue-lazyload'
 import router from './router.js'
 import App from './App.vue'
 // import env from './env.js'
@@ -12,6 +13,9 @@ if(mock) {
 }
 
 Vue.use(VueAxios, axios);
+Vue.use(VueLazyLoad,{
+  loading:'/imgs/loading-svg/loading-bars.svg'
+})
 Vue.config.productionTip = false;
 
 // 根据前端的跨域方式做调整 /a/b : /api/a/b => /a/b
