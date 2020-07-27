@@ -1,4 +1,2 @@
 # MI-Mall
-小米商城/Xiaomi e-Mall
-
-test!
+Vue实现 小米商城 / Xiaomi e-Mall
