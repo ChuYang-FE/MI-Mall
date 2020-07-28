@@ -180,6 +180,9 @@ export default {
           color:#B0B0B0;
           display: inline-block;
           margin-right: 17px;
+          &:hover{
+            color: white;
+          }
         }
         .my-cart{
           width: 110px;
