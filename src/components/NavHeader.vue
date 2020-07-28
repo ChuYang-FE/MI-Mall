@@ -200,6 +200,9 @@ export default {
         @include flex();
         position:relative;
         height:112px;
+        .header-logo{
+          overflow: hidden;
+        }
         .header-menu{
           display: inline-block;
           width:643px;
