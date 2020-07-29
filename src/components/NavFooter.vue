@@ -59,9 +59,29 @@ export default {
       a{
         color:#999999;
         display:inline-block;
+        position: relative;
+        transition: 0.6s;
+        &::before{
+          content: '';
+          display: inline-block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          border-radius: 50%;
+          background: #FF6600;
+          transition: 0.6s;
+          transform: scale(0.8);
+          z-index: -1;
+        }
         &:hover{
-          color:#FF6600;
           text-decoration-line: underline;
+          text-shadow: 0 0 25px #FF6600;
+        }
+        &:hover::before{
+          box-shadow: 0 0 14px 2px #FF6600;
+          transform: scale(1.05);
         }
       }
       span{
