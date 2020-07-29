@@ -16,7 +16,7 @@
               class="btn"
               v-if="btnType==1"
               v-on:click="$emit('submit')"
-            >{{sureText}}</a>
+            >{{confirmText}}</a>
             <a
               href="javascript:;"
               class="btn"
@@ -24,7 +24,7 @@
               v-on:click="$emit('cancel')"
             >{{cancelText}}</a>
             <div class="btn-group" v-if="btnType==3">
-              <a href="javascript:;" class="btn" v-on:click="$emit('submit')">{{sureText}}</a>
+              <a href="javascript:;" class="btn" v-on:click="$emit('submit')">{{confirmText}}</a>
               <a href="javascript:;" class="btn btn-default" v-on:click="$emit('cancel')">{{cancelText}}</a>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default {
     // 按钮类型: 1:确定按钮 2：取消按钮 3：确定+取消
     btnType:String,
 
-    sureText:{
+    confirmText:{
         type:String,
         default:'确定'
     },

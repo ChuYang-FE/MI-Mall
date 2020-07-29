@@ -94,7 +94,7 @@
       title="提示"
       modalType="middle"
       btnType="1"
-      sureText="查看购物车"
+      confirmText="查看购物车"
       :showModal="showModal"
       @submit="goToCart"
       @cancel="showModal=false"
