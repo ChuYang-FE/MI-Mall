@@ -123,7 +123,7 @@ export default {
 },
   data() {
     return {
-      username:"jack",
+      username:"",
       phoneList:[]
     }
 },
