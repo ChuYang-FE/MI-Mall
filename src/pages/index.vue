@@ -53,7 +53,7 @@
       </div>
       <div class="ads-box">
         <a :href="'/#/product/'+item.id" v-for="item in adsList" :key="item.id">
-          <img :src="item.img" alt />
+          <img v-lazy="item.img" alt />
         </a>
       </div>
       <div class="banner">
