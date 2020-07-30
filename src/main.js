@@ -5,6 +5,7 @@ import VueLazyLoad from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
 import router from './router.js'
 import App from './App.vue'
+import store from './store'
 // import env from './env.js'
 
 //mock开关
@@ -43,5 +44,6 @@ axios.interceptors.response.use(function(response){
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')

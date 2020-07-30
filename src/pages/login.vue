@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   name: 'login',
   components: {
@@ -60,6 +61,8 @@ export default {
           password,
         }).then((res) => {
           this.$cookie.set('userId',res.id,{expires:'session'});  //因为无token，所以用userId来标识用户
+          // this.$store.dispatch('saveUserName',res.username);
+          this.saveUserName(res.username);
           this.$router.push({
             name:'index',
             params:{
@@ -71,6 +74,7 @@ export default {
         alert('账号、密码不能为空！');
       }
     },
+    ...mapActions(['saveUserName']),
     register(){
       let {username,password} = this;
       if(username != '' && password != ''){

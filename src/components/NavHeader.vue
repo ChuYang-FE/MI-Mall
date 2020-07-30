@@ -13,7 +13,7 @@
           <a href="javascript:;" v-if="!username" @click="login">登录</a>
           <a href="javascript:;" v-if="username" @click="logout">退出</a>
           <a href="/#/order/list" v-if="username">我的订单</a>
-          <a href="javascript:;" class="my-cart" @click="goToCart"><span class="icon-cart"></span>购物车</a>
+          <a href="javascript:;" class="my-cart" @click="goToCart"><span class="icon-cart"></span>购物车（{{cartCount}}）</a>
         </div>
       </div>
     </div>
@@ -116,26 +116,39 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   name: 'nav-header',
   components: {
     
-},
+  },
   data() {
     return {
-      username:"",
       phoneList:[]
     }
-},
+  },
+  computed: {
+    // username(){
+    //   return this.$store.state.username;
+    // },
+    // cartCount(){
+    //   return this.$store.state.cartCount;
+    // }
+    ...mapState(['username','cartCount']),
+  },
   filters:{
       currency(val){
         if(!val)return '0.00';
         return '￥' + val.toFixed(2) + '元';
       }
-    },
+  },
 //生命周期 - 挂载完成（访问DOM元素）
   mounted() {
     this.getProductList();
+    let params = this.$route.params;
+      if(params && params.from == 'login'){
+        this.getCartCount();
+      }
   },
 
   methods: {
@@ -157,6 +170,11 @@ export default {
     },
     goToCart(){
       this.$router.push('/cart');
+    },
+    getCartCount(){
+      this.axios.get('/carts/products/sum').then((res) => {
+        this.$store.dispatch('saveCartCount',res);
+      })
     }
   },
 }
