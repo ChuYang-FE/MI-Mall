@@ -58,7 +58,7 @@ export default {
     line-height:70px;
     border-top:1px solid $colorH;
     background-color:$colorG;
-    z-index:10;
+    z-index:8;
     position: relative;
     &.is_fixed{
       position:fixed;
