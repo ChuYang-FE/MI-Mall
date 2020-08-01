@@ -119,9 +119,6 @@
 import { mapState } from 'vuex';
 export default {
   name: 'nav-header',
-  components: {
-    
-  },
   data() {
     return {
       phoneList:[]
@@ -166,13 +163,19 @@ export default {
       this.$router.push('/login');
     },
     logout(){
-      this.username = "";
+      this.axios.post('/user/logout').then(() => {
+        this.$message.success('退出成功！');
+        this.$cookie.set('userId','',{expires:'-1'});
+        this.$store.dispatch('saveUserName','');
+        this.$store.dispatch('saveCartCount','0');
+        this.$router.push('/login');
+      })
     },
     goToCart(){
       this.$router.push('/cart');
     },
     getCartCount(){
-      this.axios.get('/carts/products/sum').then((res) => {
+      this.axios.get('/carts/products/sum').then((res=0) => {
         this.$store.dispatch('saveCartCount',res);
       })
     }

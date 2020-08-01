@@ -13,7 +13,7 @@
             <input type="text" placeholder="请输入帐号" v-model="username">
           </div>
           <div class="input">
-            <input type="password" placeholder="请输入密码" v-model="password">
+            <input type="password" placeholder="请输入密码" v-model="password"  @keyup.enter="login">
           </div>
           <div class="btn-box">
             <a href="javascript:;" class="btn" @click="login">登录</a>
@@ -71,7 +71,7 @@ export default {
           });
         })
       }else{
-        alert('账号、密码不能为空！');
+        this.$message.warning('账号、密码不能为空！');
       }
     },
     ...mapActions(['saveUserName']),
@@ -83,10 +83,10 @@ export default {
           password,
           // email:''
         }).then(() => {
-          alert('注册成功！');
+          this.$message.success('注册成功！');
         })
       }else{
-        alert('账号、密码不能为空！');
+        this.$message.warning('账号、密码不能为空！');
       }
     }
   }
