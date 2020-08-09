@@ -1,6 +1,6 @@
 # 🌐MI-Mall 使用Vue全家桶仿小米商城网站
 ## ⭐️使用Vue全家桶，实现用户注册登录、商品轮播展示、加入购物车、订单金额结算、订单状态查询、订单支付等功能。
-### 📕1、主要技术栈：
+### [📕1、主要技术栈及使用库：](https://github.com/CoderTyy/MI-Mall/blob/master/package.json)
 >1. Vue全家桶（Vuex/Vue-router/Axios）
 >2. SCSS: 全局变量定义/Mixin函数使用/通用主题颜色、字号配置
 >3. 插件：Element UI（轮播图、分页器、无限下拉加载）、Vue-LazyLoad、Vue-axios
